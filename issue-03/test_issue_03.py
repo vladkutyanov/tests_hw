@@ -57,5 +57,6 @@ class TestHE(unittest.TestCase):
         with self.assertRaises(AssertionError):
             self.assertEqual(expected, actual)
 
+
 if __name__ == '__main__':
     unittest.main()
