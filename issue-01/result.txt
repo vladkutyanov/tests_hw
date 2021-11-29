@@ -1,5 +1,4 @@
 python -m doctest -v -o NORMALIZE_WHITESPACE tests-issue-01.py
-.--. -.-- - ....   --- -.
 Trying:
     decode('... --- ...')
 Expecting:
@@ -16,13 +15,13 @@ Expecting:
     'PYTHON'
 ok
 Trying:
-    decode('.--. -.-- - .... --- -.')
+    decode('.--. -.-- - .... --- -.') # doctest: +IGNORE_EXCEPTION_DETAIL
 Expecting:
     'python'
 **********************************************************************
-File "...\tests-issue-01.py", line 50, in tests-issue-01.decode
+File "...\issue-01\tests-issue-01.py", line 50, in tests-issue-01.decode
 Failed example:
-    decode('.--. -.-- - .... --- -.')
+    decode('.--. -.-- - .... --- -.') # doctest: +IGNORE_EXCEPTION_DETAIL
 Expected:
     'python'
 Got:
