@@ -1,0 +1,14 @@
+$ ...\issue-03>python test_issue_03.py
+.F..
+======================================================================
+FAIL: test_colors (__main__.TestHE)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_issue_03.py", line 47, in test_colors
+    self.assertIn(actual, expected)
+AssertionError: ('blue', [0, 1]) not found in [('red', [0, 1]), ('blue', [1, 0]), ('blue', [1, 0])]
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.003s
+
+FAILED (failures=1)
