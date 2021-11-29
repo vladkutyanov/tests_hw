@@ -1,7 +1,6 @@
 import urllib.request
 import json
-from unittest.mock import patch
-import pytest
+
 
 API_URL = 'http://worldclockapi.com/api/json/utc/now'
 
@@ -12,6 +11,7 @@ YMD_YEAR_SLICE = slice(None, YMD_SEP_INDEX)
 DMY_SEP = '.'
 DMY_SEP_INDEX = 5
 DMY_YEAR_SLICE = slice(DMY_SEP_INDEX + 1, DMY_SEP_INDEX + 5)
+
 
 def what_is_year_now() -> int:
     """
@@ -32,4 +32,3 @@ def what_is_year_now() -> int:
         raise ValueError('Invalid format')
 
     return int(year_str)
-
