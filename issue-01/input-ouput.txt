@@ -1,4 +1,4 @@
-python -m doctest -v -o NORMALIZE_WHITESPACE tests-issue-01.py
+$ python -m doctest -v -o NORMALIZE_WHITESPACE tests-issue-01.py
 .--. -.-- - ....   --- -.
 Trying:
     decode('... --- ...')
