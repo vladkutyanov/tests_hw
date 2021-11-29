@@ -56,5 +56,5 @@ def test_exception_capture():
         ('London', [1, 0, 0]),
         ]
     actual = fit_transform(['Mscow', 'New York', 'Moscow', 'London'])
-    with pytest.raises(AssertionError):
+    with pytest.raises(Exception):
         assert expected == actual
