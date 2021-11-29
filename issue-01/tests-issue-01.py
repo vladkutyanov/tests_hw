@@ -47,7 +47,7 @@ def decode(morse_message: str) -> str:
     'P...N'
     >>> decode ('.--. -.-- - ....   --- -.')
     'PYTHON'
-    >>> decode('.--. -.-- - .... --- -.')
+    >>> decode('.--. -.-- - .... --- -.') # doctest: +IGNORE_EXCEPTION_DETAIL
     'python'
     """
     decoded_letters = [
