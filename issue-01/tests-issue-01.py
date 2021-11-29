@@ -56,4 +56,7 @@ def decode(morse_message: str) -> str:
 
     return ''.join(decoded_letters)
 
-print(encode('PYTH ON'))
+"""
+if __name__ == '__main__':
+    doctest.testmod()
+"""
