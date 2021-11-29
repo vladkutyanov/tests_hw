@@ -54,7 +54,7 @@ class TestHE(unittest.TestCase):
             ('London', [1, 0, 0]),
         ]
         actual = fit_transform(['Mscow', 'New York', 'Moscow', 'London'])
-        with self.assertRaises(AssertionError):
+        with self.assertRaises(Exception):
             self.assertEqual(expected, actual)
 
 if __name__ == '__main__':
