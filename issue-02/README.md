@@ -1,1 +1,1 @@
-Если нет pytest, ставим через pip. В директории с test_issue_02.py вводим в консоли "pytest".
+Если нет pytest, ставим через pip. В директории с test_issue_02.py вводим: python -m pytest 
