@@ -5,49 +5,10 @@ rootdir: ...\issue-05
 plugins: anyio-3.3.1, cov-3.0.0
 collected 3 items
 
-test_issue_05.py ..F                                                                                             [100%]
-
-====================================================== FAILURES =======================================================
-__________________________________________________ test_url_invalid ___________________________________________________
-
-mock_urlopen = <MagicMock name='urlopen' id='1857804161808'>
-
-    @patch('urllib.request.urlopen')
-    def test_url_invalid(mock_urlopen):
-        cm = MagicMock()
-        cm.read.return_value = json.dumps({'$id': '1', 'currentDateTime': '29-1134-2020'})
-        cm.__enter__.return_value = cm
-        mock_urlopen.return_value = cm
-        with urllib.request.urlopen('http://localhost'):
->           assert get_year.what_is_year_now() == 2020
-
-test_issue_05.py:34:
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-
-    def what_is_year_now() -> int:
-        """
-        Получает текущее время из API-worldclock и извлекает из поля 'currentDateTime' год
-        Предположим, что currentDateTime может быть в двух форматах:
-          * YYYY-MM-DD - 2019-03-01
-          * DD.MM.YYYY - 01.03.2019
-        """
-        with urllib.request.urlopen(API_URL) as resp:
-            resp_json = json.load(resp)
-
-        datetime_str = resp_json['currentDateTime']
-        if datetime_str[YMD_SEP_INDEX] == YMD_SEP:
-            year_str = datetime_str[YMD_YEAR_SLICE]
-        elif datetime_str[DMY_SEP_INDEX] == DMY_SEP:
-            year_str = datetime_str[DMY_YEAR_SLICE]
-        else:
->           raise ValueError('Invalid format')
-E           ValueError: Invalid format
-
-get_year.py:32: ValueError
+test_issue_05.py ...                                                                                             [100%]
 
 ----------- coverage: platform win32, python 3.8.5-final-0 -----------
 Coverage HTML written to dir htmlcov
 
-=============================================== short test summary info ===============================================
-FAILED test_issue_05.py::test_url_invalid - ValueError: Invalid format
-============================================= 1 failed, 2 passed in 0.43s =============================================
+
+================================================== 3 passed in 0.35s ==================================================
