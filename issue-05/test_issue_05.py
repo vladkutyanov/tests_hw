@@ -32,4 +32,5 @@ def test_url_invalid(mock_urlopen):
     cm.__enter__.return_value = cm
     mock_urlopen.return_value = cm
     with urllib.request.urlopen('http://localhost'):
-        assert get_year.what_is_year_now() == 2020
+        with pytest.raises(Exception):
+            assert get_year.what_is_year_now() == 2020
